@@ -1,9 +1,10 @@
 <h1>Omg Selfies</h1>
-
+<br>
+<%= link_to "New Selfie", new_photo_path, :class=>"btn btn-lg btn-default" %>
+<br>
+<br>
 <ul>
   <% @photos.each do |photo| %>
-  <%= image_tag photo.picture.url %>
-  <%= image_tag photo.picture.url(:medium) %>
-  <%= image_tag photo.picture.url(:thumb) %>
+    <%= image_tag photo.picture.url %>
   <% end %>
 </ul>
