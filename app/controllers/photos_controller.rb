@@ -4,7 +4,12 @@ class PhotosController < ApplicationController
   end
 
   def create
-    @photo = Photo.create( photo_params )
+    @photo = Photo.create(photo_params)
+    if @photo.save
+      redirect_to photos_path, notice: "Selfie Added!"
+    else
+      render "new"
+    end
   end
 
   def new
@@ -14,6 +19,6 @@ class PhotosController < ApplicationController
   private
 
   def photo_params
-    params.require(:photo).permit(:picture, :user_id, :default_url)
+    params.require(:photo).permit(:picture, :user_id, :default_url, :picture_file_name, :picture_content_type)
   end
 end
