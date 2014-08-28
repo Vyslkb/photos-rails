@@ -1,0 +1,11 @@
+<h1> Das Photo </h1>
+
+<%= image_tag @photo.picture.url %>
+
+<%= form_for(@photo) do |f| %>
+  <div class="form-group">
+    <%= f.label "User:" %>
+    <%= f.collection_select :user_id, User.all, :id, :email %>
+  </div>
+  <%= f.submit(:class => "btn btn-danger") %>
+<% end %>

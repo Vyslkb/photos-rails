@@ -3,8 +3,11 @@
 <%= link_to "New Selfie", new_photo_path, :class=>"btn btn-lg btn-default" %>
 <br>
 <br>
-<ul>
+<div class="row">
   <% @photos.each do |photo| %>
-    <%= image_tag photo.picture.url %>
+  <div class="col-sm-6 col-md-3">
+
+    <a href = "<%= photo_path(photo.id) %>"><%= image_tag photo.picture.url, :class=>"thumbnail" %></a>
+  </div>
   <% end %>
-</ul>
+</div>
