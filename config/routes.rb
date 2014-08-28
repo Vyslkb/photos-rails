@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-  resources :photos
-
   get 'signup', to: 'users#new', as: 'signup'
   get 'login', to: 'sessions#new', as: 'login'
   get 'logout', to: 'sessions#destroy', as: 'logout'
@@ -9,5 +7,6 @@ Rails.application.routes.draw do
   root :to => 'users#index'
   resources :sessions
   resources :users
+  resources :photos
 
 end
