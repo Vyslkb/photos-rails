@@ -1,4 +1,7 @@
 class PhotosController < ApplicationController
+
+  before_filter :authorize, only: [:create, :destroy]
+
   def index
     @photos = Photo.all
   end
