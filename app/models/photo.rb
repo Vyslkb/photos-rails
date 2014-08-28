@@ -3,9 +3,8 @@ class Photo < ActiveRecord::Base
   validates_attachment :picture,
   :content_type => { :content_type => ["image/jpeg", "image/gif", "image/png"] }
 
-  belongs_to :user
-
-  # attr_accessor :picture_file_name
+  has_many :tags
+  has_many :users, through: :tags
 
 end
 
