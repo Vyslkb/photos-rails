@@ -6,8 +6,8 @@
 <div class="row">
   <% @photos.each do |photo| %>
   <div class="col-sm-6 col-md-3">
-
     <a href = "<%= photo_path(photo.id) %>"><%= image_tag photo.picture.url, :class=>"thumbnail" %></a>
+    <p><%= photo.favorites.count %> <span class="glyphicon glyphicon-heart"></span></p>
     <ul>
     <% photo.users.each do |user| %>
       <li><%= user.email %></li>

@@ -22,6 +22,7 @@ class PhotosController < ApplicationController
   def show
     @photo = Photo.find(params[:id])
     @tag = Tag.new
+    @fav = Favorite.new
   end
 
 

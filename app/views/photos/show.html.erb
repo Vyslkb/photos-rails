@@ -10,3 +10,11 @@
   </div>
   <%= f.submit(:class => "btn btn-danger") %>
 <% end %>
+
+<%= form_for(@fav) do |f| %>
+  <div class="form-group">
+    <%= f.hidden_field :photo_id, :value => @photo.id %>
+    <%= f.hidden_field :user_id, :value => current_user.id %>
+  </div>
+  <%= f.submit(:class => "btn btn-success") %>
+<% end %>

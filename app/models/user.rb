@@ -3,5 +3,6 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :email
 
   has_many :tags
+  has_many :favorites
   has_many :photos, through: :tags
 end

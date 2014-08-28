@@ -1,4 +1,7 @@
 class TagsController < ApplicationController
+
+  before_filter :authorize, only: [:create, :destroy]
+
   def create
     @tag = Tag.create(tag_params)
     if @tag.save

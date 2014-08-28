@@ -4,6 +4,7 @@ class Photo < ActiveRecord::Base
   :content_type => { :content_type => ["image/jpeg", "image/gif", "image/png"] }
 
   has_many :tags
+  has_many :favorites
   has_many :users, through: :tags
 
 end
