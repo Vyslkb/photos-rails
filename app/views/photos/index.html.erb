@@ -8,6 +8,11 @@
   <div class="col-sm-6 col-md-3">
 
     <a href = "<%= photo_path(photo.id) %>"><%= image_tag photo.picture.url, :class=>"thumbnail" %></a>
+    <ul>
+    <% photo.users.each do |user| %>
+      <li><%= user.email %></li>
+    <% end %>
+    </ul>
   </div>
   <% end %>
 </div>
