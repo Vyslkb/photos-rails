@@ -15,6 +15,11 @@ class User < ActiveRecord::Base
         user_weights[tag.tagged_by] = 1
       end
     end
-    #
+    rec_photos = []
+    user_weights.each_pair do |key, value|
+      num = key.to_i
+      rec_photos << Photo.find_by(uploaded_by: num)
+    end
+    rec_photos
   end
 end
