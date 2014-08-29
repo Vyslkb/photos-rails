@@ -20,6 +20,6 @@ class TagsController < ApplicationController
   private
 
   def tag_params
-    params.require(:tag).permit(:photo_id, :user_id)
+    params.require(:tag).permit(:photo_id, :user_id, :tagged_by)
   end
 end
