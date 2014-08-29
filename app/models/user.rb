@@ -5,4 +5,16 @@ class User < ActiveRecord::Base
   has_many :tags
   has_many :favorites
   has_many :photos, through: :tags
+
+  def recommend
+    user_weights = {}
+    self.tags.each do |tag|
+      if user_weights.has_key?(tag.tagged_by)
+        user_weights[tag.tagged_by] += 1
+      else
+        user_weights[tag.tagged_by] = 1
+      end
+    end
+    #
+  end
 end
