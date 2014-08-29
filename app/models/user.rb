@@ -16,6 +16,7 @@ class User < ActiveRecord::Base
       end
     end
     rec_photos = []
+    user_weights.sort_by { |key, value| value }
     user_weights.each_pair do |key, value|
       num = key.to_i
       rec_photos << Photo.find_by(uploaded_by: num)
